@@ -1,0 +1,77 @@
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px; 
+  }
+   
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+   
+  .flip-card.active .flip-card-inner {
+    transform: rotateY(180deg) !important;
+  }
+   
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;  
+    backface-visibility: hidden;
+  }
+   
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+   
+  .flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+    display: grid;
+    place-items: center;
+    font-size: 50px;
+  }
+
+  .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    grid-auto-rows: 150px;
+    gap: 20px;
+    overflow: auto;
+  }
+  .gameOver {
+    position: absolute;
+    background: #000000db;
+    height: 100vh;
+    width: 100%;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;  
+  }
+  
+  .gameOver h4 {
+    font-size: 50px;
+    color: white;   
+    margin: 0;
+  }
+  
+  .restart-button {
+    padding: 10px 20px;
+    background: #009688;  
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 20px;  
+  }
+  
